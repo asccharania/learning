@@ -1,0 +1,5 @@
+Ward	100	81	93		     89
+Duff		93	83	81		66
+Smith		    71
+Taylor	35	          82                    76
+Watts	    31            51

@@ -1,0 +1,6 @@
+textFileName = input("Please enter the pathname of the input book file: ")
+textFile = open(textFileName, "r")
+bookText = textFile.read()
+bookWords = bookText.split()
+print("There are", len(bookWords), "words in", textFileName)
+textFile.close()

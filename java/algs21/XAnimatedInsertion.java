@@ -1,0 +1,65 @@
+package algs21;
+import stdlib.*;
+
+public class XAnimatedInsertion {
+
+    public static void sort (double[] a) {
+        final int N = a.length;
+        show (a, 0, 0);
+        for (int i = 0; i < N; i++) {
+            for (int j = i; j > 0 && less (a[j], a[j - 1]); j--) {
+                exch (a, j, j - 1);
+                show (a, i, j - 1);
+            }
+            assert isSorted (a, 0, i);
+        }
+        assert isSorted (a);
+    }
+
+    private static void show (double[] a, int i, int min) {
+        StdDraw.clear ();
+        //StdDraw.setYscale(-a.length + i + 1, i);
+        StdDraw.setPenColor (StdDraw.LIGHT_GRAY);
+        for (int k = 0; k < i; k++)
+            StdDraw.line (k, 0, k, a[k] * .6);
+        StdDraw.setPenColor (StdDraw.BLACK);
+        for (int k = i; k < a.length; k++)
+            StdDraw.line (k, 0, k, a[k] * .6);
+        StdDraw.setPenColor (StdDraw.BOOK_RED);
+        StdDraw.line (min, 0, min, a[min] * .6);
+        StdDraw.show (100);
+    }
+
+    private static boolean less (double v, double w) {
+        return v < w;
+    }
+    private static void exch (double[] a, int i, int j) {
+        final double t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+    private static boolean isSorted (double[] a) {
+        return isSorted (a, 0, a.length - 1);
+    }
+    private static boolean isSorted (double[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++)
+            if (less (a[i], a[i - 1])) return false;
+        return true;
+    }
+
+    public static void main (String[] args) {
+        args = new String[] { "25" };
+        final int N = Integer.parseInt (args[0]);
+        StdDraw.setCanvasSize (160, 640);
+        StdDraw.setXscale (-1, N + 1);
+        StdDraw.setPenRadius (.006);
+        final double[] a = new double[N];
+        for (int i = 0; i < N; i++)
+            a[i] = Math.random ();
+        //java.util.Arrays.sort (a);
+        //java.util.Arrays.sort (a); for (int i = 0; i < (N-1)/2; i++) exch(a, i, N-i-1);
+        java.util.Arrays.sort (a); int d=(int)Math.sqrt(N); for (int i=0; i<N; i++) exch (a, i, Math.max (Math.min (i+StdRandom.uniform (-d, d),N-1),0));
+        sort (a);
+    }
+
+}

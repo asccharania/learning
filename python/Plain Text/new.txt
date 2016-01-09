@@ -1,0 +1,5 @@
+Smith 71.0
+Ward 90.75
+Taylor 64.33333333333333
+Duff 80.75
+Watts 41.0

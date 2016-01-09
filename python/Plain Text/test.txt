@@ -1,0 +1,5 @@
+cat,mmeeeewww,15
+bird,squak,66
+dog,bark,15
+lizard,sqreech,1
+robot,murder,90000

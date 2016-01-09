@@ -1,0 +1,5 @@
+Student: Ward, Average: 90.75
+Student: Duff, Average: 80.75
+Student: Smith, Average: 71.0
+Student: Taylor, Average: 64.33333333333333
+Student: Watts, Average: 41.0
